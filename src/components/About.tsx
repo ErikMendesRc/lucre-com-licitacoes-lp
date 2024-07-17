@@ -11,7 +11,7 @@ const About: React.FC = () => {
               alt="Diego Macedo"
               className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg mx-auto"
             />
-            <div className="caption text-center mt-2 text-sm text-gray-400">Diego Macedo</div>
+            <div className="caption text-center mt-2 text-sm text-gray-400">Na foto, vemos um de nossos analistas participando de uma licitação no valor de 6 milhões para um cliente de Brasília.</div>
           </div>
         </div>
         <div className="w-full md:w-1/2 md:pl-12">
