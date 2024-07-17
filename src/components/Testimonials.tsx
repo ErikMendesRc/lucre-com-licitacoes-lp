@@ -4,15 +4,15 @@ import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 const testimonials = [
   {
     text: "A Código da Lucratividade nos ajudou a ganhar nossa primeira licitação, e não poderíamos estar mais felizes!",
-    author: "Cliente Satisfeito",
+    author: "Gabriel",
   },
   {
     text: "Equipe altamente qualificada e sempre disponível para nos ajudar em todas as etapas.",
-    author: "Outro Cliente Satisfeito",
+    author: "Henrique",
   },
   {
     text: "Graças à Código da Lucratividade, conseguimos aumentar significativamente nossos lucros.",
-    author: "Mais um Cliente Satisfeito",
+    author: "Augusto",
   },
 ];
 

@@ -32,16 +32,16 @@ const About: React.FC = () => {
           </p>
           <div className="flex flex-col md:flex-row md:space-x-12">
             <div className="mb-6 md:mb-0 animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 317.844</h3>
-              <p>Lucro em 09/2022</p>
+              <h3 className="text-2xl md:text-3xl font-bold">R$ 90 milhões</h3>
+              <p>Homologações em 2021</p>
             </div>
             <div className="mb-6 md:mb-0 animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 300.000</h3>
-              <p>Lucro em 12/2022</p>
+              <h3 className="text-2xl md:text-3xl font-bold">R$ 130 milhões</h3>
+              <p>Homologações em 2022</p>
             </div>
             <div className="animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 5.8 milhões</h3>
-              <p>Lucro em 12/2023</p>
+              <h3 className="text-2xl md:text-3xl font-bold">R$ 200 milhões</h3>
+              <p>Homologações em 2023</p>
             </div>
           </div>
           <a
