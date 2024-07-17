@@ -1,28 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 const About: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.volume = 0.3;
-    }
-  }, []);
-
   return (
     <section className="bg-secondary text-textLight p-6 md:p-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-            <video
-              ref={videoRef}
-              src="/video.mp4"
-              controls
-              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-              autoPlay
-              muted
-              loop
+          <div className="relative w-full">
+            <img
+              src="/diego-macedo.jpeg"
+              alt="Diego Macedo"
+              className="w-full max-w-xs md:max-w-sm lg:max-w-md rounded-lg shadow-lg mx-auto"
             />
+            <div className="caption text-center mt-2 text-sm text-gray-400">Diego Macedo</div>
           </div>
         </div>
         <div className="w-full md:w-1/2 md:pl-12">
@@ -57,4 +46,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default About; 
