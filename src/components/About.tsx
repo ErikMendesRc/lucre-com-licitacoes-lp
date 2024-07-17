@@ -45,7 +45,7 @@ const About: React.FC = () => {
             </div>
           </div>
           <a
-            href="/vendas.pdf"
+            href="/plano-de-negocios.pdf"
             download
             className="mt-8 bg-accent text-textDark px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300 shadow-lg inline-block animate-fadeIn"
           >

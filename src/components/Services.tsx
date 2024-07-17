@@ -24,6 +24,13 @@ const formatCurrency = (value: number) => {
   }).format(value);
 };
 
+const formatYAxis = (value: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
+
 interface CustomTooltipProps {
   active?: boolean;
   payload?: { value: number }[];
@@ -63,7 +70,7 @@ const Services: React.FC = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <ResponsiveContainer width="100%" height={400}>
-            <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+            <AreaChart data={data} margin={{ top: 20, right: 30, left: 70, bottom: 5 }}>
               <defs>
                 <linearGradient id="colorInitial" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor="#4caf50" stopOpacity={0.8} />
@@ -76,7 +83,7 @@ const Services: React.FC = () => {
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e1dd" />
               <XAxis dataKey="date" tick={{ fill: '#e0e1dd' }} />
-              <YAxis tickFormatter={formatCurrency} tick={{ fill: '#e0e1dd' }} />
+              <YAxis tickFormatter={formatYAxis} tick={{ fill: '#e0e1dd' }} />
               <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }} />
               <Legend wrapperStyle={{ color: '#e0e1dd' }} />
               <Area type="monotone" dataKey="initial" stroke="#4caf50" fillOpacity={1} fill="url(#colorInitial)" name="Valor Inicial" />
