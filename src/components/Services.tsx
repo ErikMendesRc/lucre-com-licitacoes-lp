@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 const data = [
@@ -52,60 +53,67 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
 };
 
 const Services: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="bg-primary text-textLight py-8 md:py-12">
+    <section ref={ref} className="bg-primary text-textLight py-8 md:py-12">
       <div className="container mx-auto flex flex-col lg:flex-row items-center px-4 md:px-6 max-w-full overflow-hidden">
         <div className="w-full lg:w-1/2 pr-0 lg:pr-6 mb-8 lg:mb-0">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 animate-fadeIn">Nosso Impacto em Números</h2>
-          <p className="text-lg md:text-xl mb-6 animate-slideInLeft">
+          <h2 className={`text-3xl md:text-4xl font-serif font-bold mb-6 ${inView ? 'animate-fadeIn' : ''}`}>Nosso Impacto em Números</h2>
+          <p className={`text-lg md:text-xl mb-6 ${inView ? 'animate-slideInLeft' : ''}`}>
             Veja abaixo alguns exemplos de vendas realizadas com margens de lucro excepcionais.
             Nosso foco é sempre garantir os melhores resultados para nossos clientes.
           </p>
-          <p className="text-md md:text-lg animate-slideInRight">
+          <p className={`text-md md:text-lg ${inView ? 'animate-slideInRight' : ''}`}>
             Cada gráfico representa um caso de sucesso, mostrando como a "Código da Lucratividade" ajuda empresas a alcançar resultados excepcionais em processos licitatórios. Nosso objetivo é maximizar seus lucros com estratégias personalizadas e eficientes.
           </p>
-          <p className="text-md md:text-lg animate-slideInRight mt-4">
+          <p className={`text-md md:text-lg ${inView ? 'animate-slideInRight' : ''} mt-4`}>
             Entre em contato para saber mais sobre como podemos ajudar sua empresa a crescer no mercado de licitações.
           </p>
         </div>
         <div className="w-full lg:w-1/2">
-          <ResponsiveContainer width="100%" height={400}>
-            <AreaChart data={data} margin={{ top: 20, right: 30, left: 70, bottom: 5 }}>
-              <defs>
-                <linearGradient id="colorInitial" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#4caf50" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#4caf50" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="colorFinal" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#f0a500" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#f0a500" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e0e1dd" />
-              <XAxis dataKey="date" tick={{ fill: '#e0e1dd' }} />
-              <YAxis tickFormatter={formatYAxis} tick={{ fill: '#e0e1dd' }} />
-              <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }} />
-              <Legend wrapperStyle={{ color: '#e0e1dd' }} />
-              <Area
-                type="monotone"
-                dataKey="initial"
-                stroke="#4caf50"
-                fillOpacity={1}
-                fill="url(#colorInitial)"
-                name="Valor Inicial"
-                animationDuration={3000}
-              />
-              <Area
-                type="monotone"
-                dataKey="final"
-                stroke="#f0a500"
-                fillOpacity={1}
-                fill="url(#colorFinal)"
-                name="Valor Final"
-                animationDuration={5000}
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+          {inView && (
+            <ResponsiveContainer width="100%" height={400}>
+              <AreaChart data={data} margin={{ top: 20, right: 30, left: 70, bottom: 5 }}>
+                <defs>
+                  <linearGradient id="colorInitial" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#4caf50" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#4caf50" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="colorFinal" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#f0a500" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#f0a500" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e0e1dd" />
+                <XAxis dataKey="date" tick={{ fill: '#e0e1dd' }} />
+                <YAxis tickFormatter={formatYAxis} tick={{ fill: '#e0e1dd' }} />
+                <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }} />
+                <Legend wrapperStyle={{ color: '#e0e1dd' }} />
+                <Area
+                  type="monotone"
+                  dataKey="initial"
+                  stroke="#4caf50"
+                  fillOpacity={1}
+                  fill="url(#colorInitial)"
+                  name="Valor Inicial"
+                  animationDuration={3000}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="final"
+                  stroke="#f0a500"
+                  fillOpacity={1}
+                  fill="url(#colorFinal)"
+                  name="Valor Final"
+                  animationDuration={5000}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          )}
         </div>
       </div>
     </section>

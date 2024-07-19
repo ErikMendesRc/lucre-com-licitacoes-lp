@@ -1,15 +1,21 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useInView } from 'react-intersection-observer';
 
 const Contact: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="bg-secondary text-textLight py-8 md:py-12">
+    <section ref={ref} className="bg-secondary text-textLight py-8 md:py-12">
       <div className="container mx-auto text-center px-4 md:px-6 max-w-full overflow-hidden">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fadeIn">Entre em Contato</h2>
-        <p className="text-lg md:text-xl mb-6 animate-slideInLeft">
+        <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${inView ? 'animate-fadeIn' : ''}`}>Entre em Contato</h2>
+        <p className={`text-lg md:text-xl mb-6 ${inView ? 'animate-slideInLeft' : ''}`}>
           Se você deseja expandir seus negócios e garantir o sucesso da sua empresa no mercado de licitações, entre em contato conosco agora mesmo!
         </p>
-        <div className="flex justify-center items-center animate-slideInUp">
+        <div className={`flex justify-center items-center ${inView ? 'animate-slideInUp' : ''}`}>
           <a
             href="https://wa.me/557597155023"
             target="_blank"
