@@ -54,7 +54,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload, label })
 const Services: React.FC = () => {
   return (
     <section className="bg-primary text-textLight py-8 md:py-12">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center px-4 md:px-6">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center px-4 md:px-6 max-w-full overflow-hidden">
         <div className="w-full lg:w-1/2 pr-0 lg:pr-6 mb-8 lg:mb-0">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 animate-fadeIn">Nosso Impacto em Números</h2>
           <p className="text-lg md:text-xl mb-6 animate-slideInLeft">
@@ -86,8 +86,24 @@ const Services: React.FC = () => {
               <YAxis tickFormatter={formatYAxis} tick={{ fill: '#e0e1dd' }} />
               <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255, 255, 255, 0.1)' }} />
               <Legend wrapperStyle={{ color: '#e0e1dd' }} />
-              <Area type="monotone" dataKey="initial" stroke="#4caf50" fillOpacity={1} fill="url(#colorInitial)" name="Valor Inicial" />
-              <Area type="monotone" dataKey="final" stroke="#f0a500" fillOpacity={1} fill="url(#colorFinal)" name="Valor Final" />
+              <Area
+                type="monotone"
+                dataKey="initial"
+                stroke="#4caf50"
+                fillOpacity={1}
+                fill="url(#colorInitial)"
+                name="Valor Inicial"
+                animationDuration={3000}
+              />
+              <Area
+                type="monotone"
+                dataKey="final"
+                stroke="#f0a500"
+                fillOpacity={1}
+                fill="url(#colorFinal)"
+                name="Valor Final"
+                animationDuration={5000}
+              />
             </AreaChart>
           </ResponsiveContainer>
         </div>

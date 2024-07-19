@@ -19,17 +19,15 @@ const testimonials = [
 const Testimonials: React.FC = () => {
   return (
     <section className="bg-primary text-textLight py-8 md:py-12">
-      <div className="container mx-auto text-center px-4 md:px-6">
+      <div className="container mx-auto text-center px-4 md:px-6 max-w-full overflow-hidden">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 animate-fadeIn">Depoimentos</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="p-4 md:p-6 bg-secondary text-textLight shadow-lg rounded-lg animate-slideInUp">
-              <div className="text-accent mb-4">
-                <FaQuoteLeft size={24} />
-              </div>
-              <p className="italic mb-4">{testimonial.text}</p>
-              <div className="text-accent mt-4">
-                <FaQuoteRight size={24} />
+              <div className="flex items-center justify-start mb-4 text-accent">
+                <FaQuoteLeft className="mr-2" size={16} />
+                <p className="italic">{testimonial.text}</p>
+                <FaQuoteRight className="ml-2" size={16} />
               </div>
               <p className="font-bold text-right mt-4">- {testimonial.author}</p>
             </div>

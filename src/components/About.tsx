@@ -1,9 +1,10 @@
 import React from 'react';
+import CountUp from 'react-countup';
 
 const About: React.FC = () => {
   return (
     <section className="bg-secondary text-textLight p-6 md:p-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-col md:flex-row items-center max-w-full overflow-hidden">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <div className="relative w-full">
             <img
@@ -21,15 +22,24 @@ const About: React.FC = () => {
           </p>
           <div className="flex flex-col md:flex-row md:space-x-12">
             <div className="mb-6 md:mb-0 animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 90 milhões</h3>
+              <div className="flex items-baseline text-2xl md:text-3xl font-bold">
+                <span className="mr-1">R$</span>
+                <CountUp start={0} end={90000000} duration={2.5} separator="." />
+              </div>
               <p>Homologações em 2021</p>
             </div>
             <div className="mb-6 md:mb-0 animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 130 milhões</h3>
+              <div className="flex items-baseline text-2xl md:text-3xl font-bold">
+                <span className="mr-1">R$</span>
+                <CountUp start={0} end={130000000} duration={2.5} separator="." />
+              </div>
               <p>Homologações em 2022</p>
             </div>
             <div className="animate-slideInRight">
-              <h3 className="text-2xl md:text-3xl font-bold">R$ 200 milhões</h3>
+              <div className="flex items-baseline text-2xl md:text-3xl font-bold">
+                <span className="mr-1">R$</span>
+                <CountUp start={0} end={200000000} duration={2.5} separator="." />
+              </div>
               <p>Homologações em 2023</p>
             </div>
           </div>
@@ -46,4 +56,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About; 
+export default About;
