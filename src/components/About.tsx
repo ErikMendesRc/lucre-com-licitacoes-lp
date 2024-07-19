@@ -24,21 +24,21 @@ const About: React.FC = () => {
             <div className="mb-6 md:mb-0 animate-slideInRight">
               <div className="flex items-baseline text-2xl md:text-3xl font-bold">
                 <span className="mr-1">R$</span>
-                <CountUp start={0} end={90000000} duration={2.5} separator="." />
+                <CountUp start={0} end={90000000} duration={10} separator="." />
               </div>
               <p>Homologações em 2021</p>
             </div>
             <div className="mb-6 md:mb-0 animate-slideInRight">
               <div className="flex items-baseline text-2xl md:text-3xl font-bold">
                 <span className="mr-1">R$</span>
-                <CountUp start={0} end={130000000} duration={2.5} separator="." />
+                <CountUp start={0} end={130000000} duration={10} separator="." />
               </div>
               <p>Homologações em 2022</p>
             </div>
             <div className="animate-slideInRight">
               <div className="flex items-baseline text-2xl md:text-3xl font-bold">
                 <span className="mr-1">R$</span>
-                <CountUp start={0} end={200000000} duration={2.5} separator="." />
+                <CountUp start={0} end={200000000} duration={10} separator="." />
               </div>
               <p>Homologações em 2023</p>
             </div>
