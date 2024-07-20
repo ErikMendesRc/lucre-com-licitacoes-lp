@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-gradient-to-r from-primary via-secondary to-primary text-textLight py-20">
-      <div className="container mx-auto px-6 flex flex-col items-start max-w-full overflow-hidden">
+    <header className="bg-cover bg-center bg-no-repeat text-textLight py-20" style={{ backgroundImage: 'url(/hall.jpg)' }}>
+      <div className="container mx-auto px-6 flex flex-col items-start max-w-full overflow-hidden bg-black bg-opacity-50 p-6 rounded-lg">
         <img src="/logo.svg" alt="Código da Lucratividade" className="mb-6 w-64 h-auto animate-fadeIn" />
         <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-slideInLeft">Código da Lucratividade</h1>
         <h2 className="text-2xl md:text-4xl font-semibold mt-4 animate-slideInRight">Potencialize suas vendas para o governo</h2>
