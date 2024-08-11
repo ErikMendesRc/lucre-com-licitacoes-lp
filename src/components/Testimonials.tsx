@@ -39,12 +39,6 @@ const Testimonials: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="mt-8 md:mt-12">
-          <video controls className="mx-auto rounded-lg shadow-lg w-full md:w-2/3 lg:w-1/2">
-            <source src="testemonial.mp4" type="video/mp4" />
-            Seu navegador não suporta a tag de vídeo.
-          </video>
-        </div>
       </div>
     </section>
   );

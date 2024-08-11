@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           Somos especialistas em processos licitatórios, garantindo alta rentabilidade e simplificando o trabalho durante essas etapas. Nossa equipe de especialistas, com mais de 15 anos de experiência, está pronta para ajudar sua empresa a ganhar licitações e aumentar seus lucros.
         </p>
         <a
-          href="https://wa.me/557597155023?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20como%20potencializar%20minhas%20vendas%20para%20o%20governo."
+          href="https://wa.me/556298402599?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20como%20potencializar%20minhas%20vendas%20para%20o%20governo."
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 bg-accent text-textDark px-8 py-4 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300 shadow-lg animate-fadeIn"

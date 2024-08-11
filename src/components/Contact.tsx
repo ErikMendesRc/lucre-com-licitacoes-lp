@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
         </p>
         <div className={`flex justify-center items-center ${inView ? 'animate-slideInUp' : ''}`}>
           <a
-            href="https://wa.me/557597155023"
+            href="https://wa.me/556298402599?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20como%20potencializar%20minhas%20vendas%20para%20o%20governo."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 bg-accent text-textDark px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300 flex items-center shadow-lg"
